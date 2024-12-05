@@ -1,0 +1,16 @@
+# output
+bin/
+bin/compiler
+bin/runtime
+
+# compiled fragments
+*.o
+*.so
+
+# vscode and other fucking configuration
+.editorconfig
+.vscode
+
+# tests binaries
+
+compiler/lunac

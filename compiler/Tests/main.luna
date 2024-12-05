@@ -1,0 +1,38 @@
+/*
+test
+test
+test
+*/
+
+fn main() () {
+    print("test")
+    print("cos")
+    if (true) {
+        print("cos")
+    }
+    /*testowy
+    komentarz
+    wielo
+    l
+    i
+    n
+    i
+    j
+    k
+    o
+    w
+    y*/
+    o, cos := okey("okey")
+}
+
+fn okey(ok string, o float, k bool) (int, float)
+{
+    print("cos")
+    return 6
+}
+
+
+
+fn okkk(cos int) (string) {
+    print("test")
+}
