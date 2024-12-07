@@ -1,6 +1,7 @@
-// --------------------------------------------- MAIN ------------------------------------------------- \\
-//                                   official part of LunaCompiler                                      \\
-//                                        Authors: LunaTeam                                             \\
+//	--------------------------------------------- MAIN ------------------------------------------------- \\
+//	                                  official part of LunaCompiler                                      \\
+//	                                       Authors: LunaTeam                                             \\
+//
 // ---------------------------------------------------------------------------------------------------- \\
 package main
 
@@ -8,6 +9,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
 	"golang.org/x/term"
 )
 
@@ -15,6 +17,7 @@ var args []string = os.Args
 
 func main() {
 	parseFlags()
+	typespp()
 
 	switch len(args) {
 	case 1:
@@ -31,7 +34,7 @@ func main() {
 					}
 					w -= lenr(" Building with default output path... ")
 					w /= 2
-					fmt.Println(strings.Repeat("-", w), pog + "Building with default output path..." + reset, strings.Repeat("-", w))
+					fmt.Println(strings.Repeat("-", w), pog+"Building with default output path..."+reset, strings.Repeat("-", w))
 				} else {
 					fmt.Printf("Building to: %s\n", DonePath)
 				}

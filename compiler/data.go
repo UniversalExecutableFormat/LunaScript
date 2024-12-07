@@ -1,6 +1,7 @@
-// --------------------------------------------- DATA ------------------------------------------------- \\
-//                                   official part of LunaCompiler                                      \\
-//                                        Authors: LunaTeam                                             \\
+//	--------------------------------------------- DATA ------------------------------------------------- \\
+//	                                  official part of LunaCompiler                                      \\
+//	                                       Authors: LunaTeam                                             \\
+//
 // ---------------------------------------------------------------------------------------------------- \\
 package main
 
@@ -17,8 +18,7 @@ var reset string = "\033[0m"
 var ekn string = "\033[0m\n"
 var pog string = "\033[1m"
 var kur string = "\033[3m"
-var funcRegex *regexp.Regexp = regexp.MustCompile(`fn\s+(\w+)\s*\(([^)]*)\)\s*\(([^)]*)\)`)         // SHIT PLEASE HELP ME
-var comt bool
+var funcRegex *regexp.Regexp = regexp.MustCompile(`fn\s+(\w+)\s*\(([^)]*)\)\s*\(([^)]*)\)`) // SHIT PLEASE HELP ME
 var comndts int = 0
 var DonePath string = "output.bin"
 var aTypes = map[string]bool{
@@ -29,9 +29,9 @@ var aTypes = map[string]bool{
 
 var (
 	bcna = "The build/compile option requires you to pass the file to compile as an argument! use: lunac build/compile FileName.luna"
-	iop = "Invalid option! Use `help` for usage information"
-	tma = "Too many arguments! Use `help` for usage information"
-	fif = "Unexpected start of a new function declaration while parsing function "
+	iop  = "Invalid option! Use `help` for usage information"
+	tma  = "Too many arguments! Use `help` for usage information"
+	fif  = "Unexpected start of a new function declaration while parsing function "
 )
 
 type lunafunc struct {
@@ -40,7 +40,7 @@ type lunafunc struct {
 	Lines   []string
 }
 
-func typesalocate() {
+func typespp() {
 	for typ := range aTypes {
 		aTypes[typ+"[]"] = true
 	}

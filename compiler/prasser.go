@@ -7,10 +7,10 @@ package main
 
 import (
 	"bufio"
+	"errors"
+	"fmt"
 	"os"
 	"strings"
-	"fmt"
-	"errors"
 )
 
 func mainPrase(filename string) map[string]lunafunc {
@@ -59,10 +59,10 @@ func mainPrase(filename string) map[string]lunafunc {
 		line = strings.TrimSpace(line)
 		if matches := funcRegex.FindStringSubmatch(line); matches != nil {
 			if curFunc != nil {
-				ShowErri(i, fif, funcName)      // FunctionNesting == false :emoji_ok:
+				ShowErri(i, fif, funcName) // FunctionNesting == false :emoji_ok:
 				return nil
 			}
-	
+
 			funcName = matches[1]
 			if _, exists := functions[funcName]; exists {
 				ShowErri(i, fmt.Sprintf("Duplicate function name: `%s`", funcName))
@@ -103,23 +103,23 @@ func mainPrase(filename string) map[string]lunafunc {
 				return nil
 			}
 		}
-	
+
 		// if int function body
 		if curFunc != nil {
-			openc := strings.Count(line, "{")   // ADD
-			closec := strings.Count(line, "}")  // DEDUCT
+			openc := strings.Count(line, "{")  // ADD
+			closec := strings.Count(line, "}") // DEDUCT
 			dep += openc
 			dep -= closec
-	
+
 			if dep == 0 {
-				functions[funcName] = *curFunc        // save func to map
+				functions[funcName] = *curFunc // save func to map
 				curFunc = nil
 				comndts += 1
 				continue
 			}
 			curFunc.Lines = append(curFunc.Lines, line)
 		}
-	}	
+	}
 	return functions
 }
 
